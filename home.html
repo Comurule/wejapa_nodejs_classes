@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>WeJapa Blog App</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <style>
+            body    { padding-top:50px; }
+        </style>
+    </head>
+    <body class="container">
+        <header>
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">                
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">
+                            <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>
+                            WeJapa Blog App
+                        </a>                
+                        <ul class="nav navbar-nav">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/beginner">Beginner</a></li>
+                            <li><a href="/junior">Junior</a></li>
+                        </ul>
+                    </div>                
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="row">
+                <div class="col-sm-8">    
+                    <div class="jumbotron">
+                        <form action="/create" method="post">
+                           <p>
+                                Lecture Title:<br>
+                                <input type="text" name="title" placeholder="Lecture Title">
+                            </p>
+                            <p>
+                                Lecture Note:<br>
+                                <textarea name="body" rows="4" cols="50" value="">
+                                </textarea>
+                            </p>
+                            <p>
+                                Choose A Category For This Lecture Note:<br/>
+                                <select name="category">
+                                    <option value="beginner">NodeJs Beginners</option>
+                                    <option value="junior">NodeJs Juniors</option>
+                                </select>
+                            </p>
+                            <p>
+                                <input type="submit" value="Save Note">
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p class="text-center text-muted">
+                © Copyright 2020 <a href="https://wejapainternships.slack.com/team/U015S8LV8E9">@Comurule</a>
+            </p>
+        </footer>
+
+        <script>
+
+        </script>
+    </body>
+
+</html>
