@@ -15,9 +15,11 @@ http
             req.on('data', chunk =>{
               data += chunk.toString();
             });
-            let categoryUrl = '';
+
+            let categoryUrl = '';//it will be used to redirect to the category page
+            
             req.on('end', ()=>{
-              //convert the data from FE back to a JSON file
+              //convert the data from string to a JSON file
               const post = qs.parse(data);
 
               const {title, body, category} = post;
@@ -27,20 +29,13 @@ http
               const path = `./notes/${category}/${title}.txt`;
               const fileData = {title, body};
               
-              fs.readdir( `./notes/${category}`, (error, files) => { 
-                files.forEach(file=>{
-                  console.log(file);
-                }); 
-              });
               //write Json data to a new file
               fs.writeFile(path, JSON.stringify(fileData), err=>{
                 if (err) throw err;
               });
             });
             //redirects after saving the file
-            res.writeHead(302, {'Location': '/junior'});
-            console.log(1, categoryUrl);
-            
+            res.writeHead(302, {'Location': '/beginner'});            
             res.end();
 
           } catch (error) {
